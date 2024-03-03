@@ -10,19 +10,24 @@ def click_buttons(loop_times):
     delays = [1, 2, 2, 30, 4, 2, 2, 2]
 
     def sleep_with_break(delay, move_cursor=False):
-        original_position = pyautogui.position()  # Save original cursor position
         if move_cursor:
-            # Move cursor to the "Stop" button's position only if specified
-            pyautogui.moveTo(125, 940)
+            # Save the original cursor position only if we intend to move the cursor
+            original_position = pyautogui.position()
 
-        for _ in range(int(delay * 10)):  # Break the delay into smaller pieces
+        # Divide the delay into smaller increments to allow for quick exit
+        for _ in range(int(delay * 10)):
             if not running:
                 break
             time.sleep(0.1)  # Sleep for a tenth of a second at a time
 
+            # Move cursor to the "Stop" button's position at the start of each 30s delay
+            if move_cursor and _ == 0:
+                pyautogui.moveTo(125, 940)
+
         if move_cursor:
-            # Move the cursor back to its original position
+            # Ensure the cursor is moved back to its original position after the delay or if stopped early
             pyautogui.moveTo(original_position)
+
 
     for _ in range(loop_times):
         if not running:
