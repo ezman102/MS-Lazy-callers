@@ -7,7 +7,7 @@ import time
 def click_buttons(loop_times):
     global running
     button_positions = [(297, 979), (363, 985), (1088, 297), (435, 986), (824, 440), (850, 778), (845, 954), (940, 599)]
-    delays = [1, 2, 2, 30, 2, 4, 2, 2]
+    delays = [1, 2, 2, 30, 4, 2, 2, 2]
 
     def sleep_with_break(delay, move_cursor=False):
         original_position = pyautogui.position()  # Save original cursor position

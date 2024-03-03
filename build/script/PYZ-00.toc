@@ -1,4 +1,4 @@
-('C:\\Users\\User\\Desktop\\autoclicker\\build\\script\\PYZ-00.pyz',
+('C:\\Users\\User\\Documents\\GitHub\\MS-Lazy-callers\\build\\script\\PYZ-00.pyz',
  [('PIL',
    'C:\\Users\\User\\AppData\\Roaming\\Python\\Python312\\site-packages\\PIL\\__init__.py',
    'PYMODULE'),
