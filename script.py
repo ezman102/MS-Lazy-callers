@@ -64,7 +64,7 @@ app.attributes("-topmost", True)  # Make the window always on top
 
 # Assuming the new width is 200 pixels and the height is 200 pixels
 # and positioning it at (20, 750)
-app.geometry("200x200+20+750")
+app.geometry("200x250+20+700")
 
 running = False  # Global flag to control execution
 
@@ -76,11 +76,11 @@ loop_entry.pack(pady=10)
 loop_entry.insert(0, "100")  # Default value
 
 # Start button with increased size
-start_button = tk.Button(app, text="Start", command=start_clicking, height=2, width=10, font=('Helvetica', '12'))
+start_button = tk.Button(app, text="Start", command=start_clicking, height=2, width=15, font=('Helvetica', '12'))
 start_button.pack(pady=10)
 
 # Stop button with increased size
-stop_button = tk.Button(app, text="Stop", command=stop_clicking, height=2, width=10, font=('Helvetica', '12'))
-stop_button.pack(pady=20)
+stop_button = tk.Button(app, text="Stop", command=stop_clicking, height=4, width=15, font=('Helvetica', '12'))
+stop_button.pack(pady=10)
 
 app.mainloop()
