@@ -56,7 +56,7 @@ def stop_clicking():
 app = tk.Tk()
 app.title("Button Clicker")
 app.attributes("-topmost", True)
-app.geometry("200x300+20+700")  # Adjust size for new entry
+app.geometry("200x300+20+650")  # Adjust size for new entry
 
 running = False
 
