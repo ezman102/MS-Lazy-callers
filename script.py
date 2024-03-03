@@ -75,12 +75,12 @@ loop_entry = tk.Entry(app)
 loop_entry.pack(pady=10)
 loop_entry.insert(0, "100")  # Default value
 
-# Start button
-start_button = tk.Button(app, text="Start", command=start_clicking)
+# Start button with increased size
+start_button = tk.Button(app, text="Start", command=start_clicking, height=2, width=10, font=('Helvetica', '12'))
 start_button.pack(pady=10)
 
-# Stop button
-stop_button = tk.Button(app, text="Stop", command=stop_clicking)
+# Stop button with increased size
+stop_button = tk.Button(app, text="Stop", command=stop_clicking, height=2, width=10, font=('Helvetica', '12'))
 stop_button.pack(pady=20)
 
 app.mainloop()
