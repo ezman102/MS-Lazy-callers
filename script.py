@@ -6,7 +6,7 @@ import time
 def click_buttons(loop_times, custom_delay):
     global running
     button_positions = [(297, 979), (363, 985), (1088, 297), (435, 986), (824, 440), (850, 778), (845, 954), (940, 599)]
-    delays = [1, 2, 2, custom_delay, 4, 2, 2, 2]  # Use custom_delay
+    delays = [1, 2, 2, custom_delay, 4, 2, 2, 2]  
 
     def sleep_with_break(delay, move_cursor=False):
         if move_cursor:
@@ -28,7 +28,7 @@ def click_buttons(loop_times, custom_delay):
         for position, delay in zip(button_positions, delays):
             if not running:
                 break
-            move_cursor = delay == custom_delay  # Check against custom_delay
+            move_cursor = delay == custom_delay  
             sleep_with_break(delay, move_cursor=move_cursor)
             if not running:
                 break
@@ -40,7 +40,7 @@ def start_clicking():
     running = True
     try:
         loop_times = int(loop_entry.get())
-        custom_delay = float(custom_delay_entry.get())  # Retrieve the custom delay
+        custom_delay = float(custom_delay_entry.get())  
     except ValueError:
         print("Please enter valid integers for the loop count and delay.")
         running = False
@@ -56,7 +56,7 @@ def stop_clicking():
 app = tk.Tk()
 app.title("Button Clicker")
 app.attributes("-topmost", True)
-app.geometry("200x300+20+650")  # Adjust size for new entry
+app.geometry("200x300+20+650") 
 
 running = False
 
@@ -72,7 +72,7 @@ custom_delay_label = tk.Label(app, text="Enter custom delay (s):")
 custom_delay_label.pack(pady=(5,0))
 custom_delay_entry = tk.Entry(app)
 custom_delay_entry.pack(pady=10)
-custom_delay_entry.insert(0, "30")  # Default value for custom delay
+custom_delay_entry.insert(0, "30")  
 
 # Start button with increased size
 start_button = tk.Button(app, text="Start", command=start_clicking, height=2, width=15, font=('Helvetica', '12'))
