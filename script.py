@@ -6,7 +6,7 @@ import time
 def click_buttons(loop_times, custom_delay):
     global running
     button_positions = [(297, 979), (363, 985), (1088, 297), (435, 986), (824, 440), (850, 778), (845, 954), (940, 599)]
-    delays = [1, 1, 1, custom_delay, 4, 0.5, 0.5, 0.5]  
+    delays = [1, 0.5, 0.5, custom_delay, 3.5, 0.5, 0.5, 0.5]  
 
     def sleep_with_break(delay, move_cursor=False):
         if move_cursor:
@@ -81,5 +81,24 @@ start_button.pack(pady=10)
 # Stop button with increased size
 stop_button = tk.Button(app, text="Stop", command=stop_clicking, height=4, width=15, font=('Helvetica', '12'))
 stop_button.pack(pady=10)
+
+def hang_up_action():
+    # Specific sequence of clicks and delays
+    button_positions = [(435, 986), (824, 440), (850, 778), (845, 954), (940, 599)]
+    delays = [3.5, 0.5, 0.5, 0.5, 0.5]  # Added an extra 0.5s delay for the last click for consistency
+
+    for position, delay in zip(button_positions, delays):
+        time.sleep(delay)  # Wait for the specified delay
+        pyautogui.click(position)  # Perform the click action
+        print(f"Clicked button at {position} after waiting {delay} seconds.")
+
+def hang_up():
+    global running
+    running = False  # Stop any ongoing process
+    hang_up_action()  # Perform the hang up action sequence
+
+# Add the Hang up button to your GUI
+hang_up_button = tk.Button(app, text="Hang Up", command=hang_up, height=2, width=15, font=('Helvetica', '12'))
+hang_up_button.pack(pady=10)
 
 app.mainloop()
