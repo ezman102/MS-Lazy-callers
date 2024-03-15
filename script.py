@@ -6,7 +6,7 @@ import time
 def click_buttons(loop_times, custom_delay):
     global running
     button_positions = [(297, 979), (363, 985), (1088, 297), (435, 986), (824, 440), (850, 778), (845, 954), (940, 599)]
-    delays = [1, 2, 2, custom_delay, 4, 2, 2, 2]  
+    delays = [1, 2, 2, custom_delay, 4, 1, 1, 1]  
 
     def sleep_with_break(delay, move_cursor=False):
         if move_cursor:
